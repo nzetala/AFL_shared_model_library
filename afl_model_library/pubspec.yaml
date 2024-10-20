@@ -1,7 +1,9 @@
 name: afl_model_library
 description: "A shared package containing common data models with JSON serialization support"
 version: 0.0.1
-publish_to: 'none'
+publish_to: "https://github.com/nzetala/AFL_shared_model_library"
+repository: "https://github.com/nzetala/AFL_shared_model_library"
+homepage: 'https://github.com/nzetala/AFL_shared_model_library'
 
 environment:
   sdk: ^3.5.3
