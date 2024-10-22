@@ -6,11 +6,11 @@ Result: Text written by the user (User’s language)
 Description: Users translate a word or phrase based on an image and its description.
 * */
 
-import 'package:afl_model_library/word/target_language_word.dart';
+import 'package:afl_model_library/word/target_language_text.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../constants/question_type.dart';
-import '../word/native_language_word.dart';
+import '../word/native_language_text.dart';
 import 'question.dart';
 
 part 'translate_from_image.g.dart';

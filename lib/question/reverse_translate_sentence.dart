@@ -6,11 +6,11 @@ Result: Sub-list of one or more words (User’s language)
 Description: Users translate a sentence from the target language to their native language using a list of words.
 * */
 
-import 'package:afl_model_library/word/target_language_word.dart';
+import 'package:afl_model_library/word/target_language_text.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../constants/question_type.dart';
-import '../word/native_language_word.dart';
+import '../word/native_language_text.dart';
 import 'question.dart';
 
 part 'reverse_translate_sentence.g.dart';

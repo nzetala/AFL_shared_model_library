@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../word/native_language_word.dart';
-import '../word/target_language_word.dart';
+import '../word/native_language_text.dart';
+import '../word/target_language_text.dart';
 
 part 'target_to_native_language_pair.g.dart';
 

@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../word/native_language_word.dart';
+import '../word/native_language_text.dart';
 
 part 'native_language_to_string_pair .g.dart';
 

@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import '../constants/supported_language.dart';
 
-part 'native_language_word.g.dart';
+part 'native_language_text.g.dart';
 
 @JsonSerializable()
 class NativeLanguageText {

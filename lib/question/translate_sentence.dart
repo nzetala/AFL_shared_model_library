@@ -9,8 +9,8 @@ Description: Users translate a sentence from their native language to the target
 import 'package:json_annotation/json_annotation.dart';
 
 import '../constants/question_type.dart';
-import '../word/native_language_word.dart';
-import '../word/target_language_word.dart';
+import '../word/native_language_text.dart';
+import '../word/target_language_text.dart';
 import 'question.dart';
 
 part 'translate_sentence.g.dart';

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'native_language_word.dart';
+part of 'native_language_text.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

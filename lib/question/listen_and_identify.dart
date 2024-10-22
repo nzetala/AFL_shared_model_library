@@ -9,7 +9,7 @@ Description: Users listen to an audio clip and identify the correct word from a 
 import 'package:json_annotation/json_annotation.dart';
 
 import '../constants/question_type.dart';
-import '../word/target_language_word.dart';
+import '../word/target_language_text.dart';
 import 'question.dart';
 
 part 'listen_and_identify.g.dart';

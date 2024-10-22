@@ -6,7 +6,7 @@ Result: One image and its text (Language the user is learning)
 Description: Users listen to an audio clip and select the correct image that matches the description.
 * */
 
-import 'package:afl_model_library/word/target_language_word.dart';
+import 'package:afl_model_library/word/target_language_text.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../constants/question_type.dart';
