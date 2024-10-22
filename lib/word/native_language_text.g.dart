@@ -8,7 +8,6 @@ part of 'native_language_text.dart';
 
 NativeLanguageText _$NativeLanguageTextFromJson(Map<String, dynamic> json) =>
     NativeLanguageText(
-      value: json['value'] as String,
       translations: (json['translations'] as Map<String, dynamic>).map(
         (k, e) =>
             MapEntry($enumDecode(_$SupportedLanguageEnumMap, k), e as String),
@@ -17,7 +16,6 @@ NativeLanguageText _$NativeLanguageTextFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$NativeLanguageTextToJson(NativeLanguageText instance) =>
     <String, dynamic>{
-      'value': instance.value,
       'translations': instance.translations
           .map((k, e) => MapEntry(_$SupportedLanguageEnumMap[k]!, e)),
     };

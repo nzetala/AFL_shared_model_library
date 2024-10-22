@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'target_language.g.dart';
+part 'target_language_text.g.dart';
 
 @JsonSerializable()
 class TargetLanguageText {
