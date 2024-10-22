@@ -14,10 +14,6 @@ class User {
     required this.email,
   });
 
-  String checkConnection() {
-    return "UHU the lib is correctly connected";
-  }
-
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }

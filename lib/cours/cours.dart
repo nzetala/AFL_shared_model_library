@@ -1,12 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'quizzes.dart';
-import 'shared/enum.dart';
+import '../constants/country_code.dart';
+import '../quizzes/quizzes.dart';
 
-part 'language.g.dart';
+part 'cours.g.dart';
 
 @JsonSerializable()
-class Language {
+class Course {
   final String id;
   final String name;
   final String info;
@@ -18,7 +18,7 @@ class Language {
   final bool isActive;
   final Quizzes quizzes;
 
-const Language({
+const Course({
   required this.id,
   required this.name,
   required this.info,
@@ -31,8 +31,8 @@ const Language({
   required this.quizzes,
 });
 
-  factory Language.fromJson(Map<String, dynamic> json) =>
-      _$LanguageFromJson(json);
+  factory Course.fromJson(Map<String, dynamic> json) =>
+      _$CourseFromJson(json);
 
-  Map<String, dynamic> toJson() => _$LanguageToJson(this);
+  Map<String, dynamic> toJson() => _$CourseToJson(this);
 }

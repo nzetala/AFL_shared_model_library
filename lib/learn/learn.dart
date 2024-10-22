@@ -2,16 +2,16 @@ import 'package:json_annotation/json_annotation.dart';
 
 import '../cours/cours.dart';
 
-part '../learn_content.g.dart';
+part 'learn.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class LearnContent {
-  final List<Course> languages;
+class Learn {
+  final List<Course> courses;
 
-const LearnContent({required this.languages});
+const Learn({required this.courses});
 
-  factory LearnContent.fromJson(Map<String, dynamic> json) =>
-      _$LearnContentFromJson(json);
+  factory Learn.fromJson(Map<String, dynamic> json) =>
+      _$LearnFromJson(json);
 
-  Map<String, dynamic> toJson() => _$LearnContentToJson(this);
+  Map<String, dynamic> toJson() => _$LearnToJson(this);
 }

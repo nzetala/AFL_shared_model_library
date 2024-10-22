@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'level.dart';
+import '../level/level.dart';
 
 part 'quizzes.g.dart';
 

@@ -1,5 +1,6 @@
-import 'package:african_language_quiz_maker/model/Question.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../question/question.dart';
 
 part 'lesson.g.dart';
 
