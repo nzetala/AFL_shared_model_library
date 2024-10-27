@@ -20,14 +20,12 @@ class TranslateFromImage extends Question {
   String imageUrl;
   TargetLanguageText wordToTranslate;
 
-  List<TargetLanguageText> options;
   NativeLanguageText answer;
 
   TranslateFromImage(
       {required super.questionId,
       required this.imageUrl,
       required this.wordToTranslate,
-      required this.options,
       required this.answer})
       : super(questionType: QuestionType.listenAndIdentify);
 
