@@ -6,6 +6,7 @@ Result: Text written by the user (User’s language)
 Description: Users translate a sentence from the target language to their native language.
 * */
 
+import 'package:afl_model_library/word/native_language_text.dart';
 import 'package:afl_model_library/word/target_language_text.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -18,7 +19,7 @@ part 'user_translate_sentence.g.dart';
 class UserTranslateSentence extends Question {
   TargetLanguageText sentenceToTranslate;
 
-  TargetLanguageText answer;
+  NativeLanguageText answer;
 
   UserTranslateSentence(
       {required super.questionId,

@@ -13,7 +13,7 @@ UserTranslateSentence _$UserTranslateSentenceFromJson(
       sentenceToTranslate: TargetLanguageText.fromJson(
           json['sentenceToTranslate'] as Map<String, dynamic>),
       answer:
-          TargetLanguageText.fromJson(json['answer'] as Map<String, dynamic>),
+          NativeLanguageText.fromJson(json['answer'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$UserTranslateSentenceToJson(
