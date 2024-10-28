@@ -17,7 +17,11 @@ part 'fill_in_the_blanks.g.dart';
 @JsonSerializable()
 class FillInTheBlanks extends Question {
   final String sentence;
+
+  @JsonKey(toJson: _optionsToJson)
   final List<TargetLanguageText> options;
+
+  @JsonKey(toJson: _answerToJson)
   final List<TargetLanguageText> answer;
 
   const FillInTheBlanks(
@@ -29,6 +33,15 @@ class FillInTheBlanks extends Question {
 
   factory FillInTheBlanks.fromJson(Map<String, dynamic> json) =>
       _$FillInTheBlanksFromJson(json);
+
   @override
   Map<String, dynamic> toJson() => _$FillInTheBlanksToJson(this);
+
+  static List<Map<String, dynamic>> _answerToJson(List<TargetLanguageText> answer) {
+    return answer.map((answer) => answer.toJson()).toList();
+  }
+
+  static List<Map<String, dynamic>> _optionsToJson(List<TargetLanguageText> options) {
+    return options.map((option) => option.toJson()).toList();
+  }
 }
