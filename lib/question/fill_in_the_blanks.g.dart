@@ -22,6 +22,6 @@ Map<String, dynamic> _$FillInTheBlanksToJson(FillInTheBlanks instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
       'sentence': instance.sentence,
-      'options': instance.options,
-      'answer': instance.answer,
+      'options': FillInTheBlanks._optionsToJson(instance.options),
+      'answer': FillInTheBlanks._answerToJson(instance.answer),
     };
