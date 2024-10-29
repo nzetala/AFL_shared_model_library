@@ -17,9 +17,11 @@ part 'user_translate_sentence.g.dart';
 
 @JsonSerializable()
 class UserTranslateSentence extends Question {
-  TargetLanguageText sentenceToTranslate;
+  @JsonKey(toJson: _sentenceToTranslateToJson)
+  final TargetLanguageText sentenceToTranslate;
 
-  NativeLanguageText answer;
+  @JsonKey(toJson: _answerToJson)
+  final NativeLanguageText answer;
 
   UserTranslateSentence(
       {required super.questionId,
@@ -29,6 +31,16 @@ class UserTranslateSentence extends Question {
 
   factory UserTranslateSentence.fromJson(Map<String, dynamic> json) =>
       _$UserTranslateSentenceFromJson(json);
+
   @override
   Map<String, dynamic> toJson() => _$UserTranslateSentenceToJson(this);
+
+  static Map<String, dynamic> _answerToJson(NativeLanguageText answer) {
+    return answer.toJson();
+  }
+
+  static Map<String, dynamic> _sentenceToTranslateToJson(
+      TargetLanguageText sentenceToTranslate) {
+    return sentenceToTranslate.toJson();
+  }
 }

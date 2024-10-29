@@ -7,14 +7,23 @@ part 'target_to_native_language_pair.g.dart';
 
 @JsonSerializable()
 class TargetToNativeLanguagePair {
-  @JsonKey(name: 'target_language')
+
+  @JsonKey(toJson: _targetLanguageToJson)
   TargetLanguageText targetLanguage;
 
-  @JsonKey(name: 'native_language')
+  @JsonKey(toJson: _nativeLanguageToJson)
   NativeLanguageText nativeLanguage;
 
   TargetToNativeLanguagePair({required this.targetLanguage, required this.nativeLanguage});
 
   factory TargetToNativeLanguagePair.fromJson(Map<String, dynamic> json) => _$TargetToNativeLanguagePairFromJson(json);
   Map<String, dynamic> toJson() => _$TargetToNativeLanguagePairToJson(this);
+
+  static Map<String, dynamic> _targetLanguageToJson(TargetLanguageText targetLanguage) {
+    return targetLanguage.toJson();
+  }
+
+  static Map<String, dynamic> _nativeLanguageToJson(NativeLanguageText nativeLanguage) {
+    return nativeLanguage.toJson();
+  }
 }

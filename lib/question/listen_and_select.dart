@@ -17,7 +17,11 @@ part 'listen_and_select.g.dart';
 @JsonSerializable()
 class ListenAndSelect extends Question {
   final String audioUrl;
+
+  @JsonKey(toJson: _answerToJson)
   final List<NativeLanguageText> answer;
+
+  @JsonKey(toJson: _optionsToJson)
   final List<NativeLanguageText> options;
 
 
@@ -32,4 +36,12 @@ class ListenAndSelect extends Question {
       _$ListenAndSelectFromJson(json);
   @override
   Map<String, dynamic> toJson() => _$ListenAndSelectToJson(this);
+
+  static List<Map<String, dynamic>> _answerToJson(List<NativeLanguageText> answer) {
+    return answer.map((answer) => answer.toJson()).toList();
+  }
+
+  static List<Map<String, dynamic>> _optionsToJson(List<NativeLanguageText> options) {
+    return options.map((option) => option.toJson()).toList();
+  }
 }

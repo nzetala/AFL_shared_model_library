@@ -21,7 +21,8 @@ TranslateWord _$TranslateWordFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$TranslateWordToJson(TranslateWord instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
-      'wordToTranslate': instance.wordToTranslate,
-      'options': instance.options,
-      'answer': instance.answer,
+      'wordToTranslate':
+          TranslateWord._wordToTranslateToJson(instance.wordToTranslate),
+      'options': TranslateWord._optionsToJson(instance.options),
+      'answer': TranslateWord._answerToJson(instance.answer),
     };

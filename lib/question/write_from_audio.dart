@@ -16,7 +16,9 @@ part 'write_from_audio.g.dart';
 
 @JsonSerializable()
 class WriteFromAudio extends Question {
-  String audioUrl;
+  final String audioUrl;
+
+  @JsonKey(toJson: _answerToJson)
   final NativeLanguageText answer;
 
   WriteFromAudio(
@@ -25,6 +27,11 @@ class WriteFromAudio extends Question {
 
   factory WriteFromAudio.fromJson(Map<String, dynamic> json) =>
       _$WriteFromAudioFromJson(json);
+
   @override
   Map<String, dynamic> toJson() => _$WriteFromAudioToJson(this);
+
+  static Map<String, dynamic> _answerToJson(NativeLanguageText answer) {
+    return answer.toJson();
+  }
 }

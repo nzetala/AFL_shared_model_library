@@ -20,6 +20,7 @@ Map<String, dynamic> _$TranslateFromImageToJson(TranslateFromImage instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
       'imageUrl': instance.imageUrl,
-      'wordToTranslate': instance.wordToTranslate,
-      'answer': instance.answer,
+      'wordToTranslate':
+          TranslateFromImage._wordToTranslateToJson(instance.wordToTranslate),
+      'answer': TranslateFromImage._answerToJson(instance.answer),
     };

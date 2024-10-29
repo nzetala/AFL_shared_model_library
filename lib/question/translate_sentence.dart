@@ -17,17 +17,39 @@ part 'translate_sentence.g.dart';
 
 @JsonSerializable()
 class TranslateSentence extends Question {
-  NativeLanguageText phrase;
+  @JsonKey(toJson: _phraseToJson)
+  final NativeLanguageText phrase;
 
-  List<TargetLanguageText> options;
-  List<TargetLanguageText> answer;
+  @JsonKey(toJson: _optionsToJson)
+  final List<TargetLanguageText> options;
+
+  @JsonKey(toJson: _answerToJson)
+  final List<TargetLanguageText> answer;
 
   TranslateSentence(
-      {required super.questionId, required this.phrase,required this.options, required this.answer})
+      {required super.questionId,
+      required this.phrase,
+      required this.options,
+      required this.answer})
       : super(questionType: QuestionType.listenAndIdentify);
 
   factory TranslateSentence.fromJson(Map<String, dynamic> json) =>
       _$TranslateSentenceFromJson(json);
+
   @override
   Map<String, dynamic> toJson() => _$TranslateSentenceToJson(this);
+
+  static Map<String, dynamic> _phraseToJson(NativeLanguageText phrase) {
+    return phrase.toJson();
+  }
+
+  static List<Map<String, dynamic>> _answerToJson(
+      List<TargetLanguageText> answer) {
+    return answer.map((answer) => answer.toJson()).toList();
+  }
+
+  static List<Map<String, dynamic>> _optionsToJson(
+      List<TargetLanguageText> options) {
+    return options.map((option) => option.toJson()).toList();
+  }
 }

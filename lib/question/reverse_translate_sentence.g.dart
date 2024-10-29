@@ -24,7 +24,7 @@ Map<String, dynamic> _$ReverseTranslateSentenceToJson(
         ReverseTranslateSentence instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
-      'phrase': instance.phrase,
-      'options': instance.options,
-      'answer': instance.answer,
+      'phrase': ReverseTranslateSentence._phraseToJson(instance.phrase),
+      'options': ReverseTranslateSentence._optionsToJson(instance.options),
+      'answer': ReverseTranslateSentence._answerToJson(instance.answer),
     };

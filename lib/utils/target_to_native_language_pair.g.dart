@@ -10,14 +10,16 @@ TargetToNativeLanguagePair _$TargetToNativeLanguagePairFromJson(
         Map<String, dynamic> json) =>
     TargetToNativeLanguagePair(
       targetLanguage: TargetLanguageText.fromJson(
-          json['target_language'] as Map<String, dynamic>),
+          json['targetLanguage'] as Map<String, dynamic>),
       nativeLanguage: NativeLanguageText.fromJson(
-          json['native_language'] as Map<String, dynamic>),
+          json['nativeLanguage'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$TargetToNativeLanguagePairToJson(
         TargetToNativeLanguagePair instance) =>
     <String, dynamic>{
-      'target_language': instance.targetLanguage,
-      'native_language': instance.nativeLanguage,
+      'targetLanguage': TargetToNativeLanguagePair._targetLanguageToJson(
+          instance.targetLanguage),
+      'nativeLanguage': TargetToNativeLanguagePair._nativeLanguageToJson(
+          instance.nativeLanguage),
     };

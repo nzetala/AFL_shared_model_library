@@ -20,6 +20,7 @@ Map<String, dynamic> _$UserTranslateSentenceToJson(
         UserTranslateSentence instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
-      'sentenceToTranslate': instance.sentenceToTranslate,
-      'answer': instance.answer,
+      'sentenceToTranslate': UserTranslateSentence._sentenceToTranslateToJson(
+          instance.sentenceToTranslate),
+      'answer': UserTranslateSentence._answerToJson(instance.answer),
     };

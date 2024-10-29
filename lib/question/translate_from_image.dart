@@ -17,10 +17,13 @@ part 'translate_from_image.g.dart';
 
 @JsonSerializable()
 class TranslateFromImage extends Question {
-  String imageUrl;
-  TargetLanguageText wordToTranslate;
+  final String imageUrl;
 
-  NativeLanguageText answer;
+  @JsonKey(toJson: _wordToTranslateToJson)
+  final TargetLanguageText wordToTranslate;
+
+  @JsonKey(toJson: _answerToJson)
+  final NativeLanguageText answer;
 
   TranslateFromImage(
       {required super.questionId,
@@ -33,4 +36,12 @@ class TranslateFromImage extends Question {
       _$TranslateFromImageFromJson(json);
   @override
   Map<String, dynamic> toJson() => _$TranslateFromImageToJson(this);
+
+  static Map<String, dynamic> _wordToTranslateToJson(TargetLanguageText wordToTranslate) {
+    return wordToTranslate.toJson();
+  }
+
+  static Map<String, dynamic> _answerToJson(NativeLanguageText answer) {
+    return answer.toJson();
+  }
 }

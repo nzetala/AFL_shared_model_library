@@ -22,7 +22,7 @@ TranslateSentence _$TranslateSentenceFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$TranslateSentenceToJson(TranslateSentence instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
-      'phrase': instance.phrase,
-      'options': instance.options,
-      'answer': instance.answer,
+      'phrase': TranslateSentence._phraseToJson(instance.phrase),
+      'options': TranslateSentence._optionsToJson(instance.options),
+      'answer': TranslateSentence._answerToJson(instance.answer),
     };

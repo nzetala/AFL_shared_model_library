@@ -21,6 +21,6 @@ Map<String, dynamic> _$ListenAndIdentifyToJson(ListenAndIdentify instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
       'audioUrl': instance.audioUrl,
-      'options': instance.options,
-      'answer': instance.answer,
+      'options': ListenAndIdentify._optionsToJson(instance.options),
+      'answer': ListenAndIdentify._answerToJson(instance.answer),
     };

@@ -17,6 +17,7 @@ NativeLanguageToStringPair _$NativeLanguageToStringPairFromJson(
 Map<String, dynamic> _$NativeLanguageToStringPairToJson(
         NativeLanguageToStringPair instance) =>
     <String, dynamic>{
-      'nativeLanguage': instance.nativeLanguage,
+      'nativeLanguage': NativeLanguageToStringPair._nativeLanguageToJson(
+          instance.nativeLanguage),
       'image': instance.image,
     };

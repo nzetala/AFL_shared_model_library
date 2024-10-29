@@ -8,7 +8,7 @@ part of 'match_pairs.dart';
 
 MatchPairs _$MatchPairsFromJson(Map<String, dynamic> json) => MatchPairs(
       questionId: json['questionId'] as String,
-      options: (json['correct_pairs'] as List<dynamic>)
+      options: (json['options'] as List<dynamic>)
           .map((e) =>
               TargetToNativeLanguagePair.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -21,6 +21,6 @@ MatchPairs _$MatchPairsFromJson(Map<String, dynamic> json) => MatchPairs(
 Map<String, dynamic> _$MatchPairsToJson(MatchPairs instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
-      'correct_pairs': instance.options,
-      'answer': instance.answer,
+      'options': MatchPairs._optionsToJson(instance.options),
+      'answer': MatchPairs._answerToJson(instance.answer),
     };

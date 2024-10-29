@@ -16,13 +16,14 @@ MatchAudioToImage _$MatchAudioToImageFromJson(Map<String, dynamic> json) =>
               NativeLanguageToStringPair.fromJson(e as Map<String, dynamic>))
           .toList(),
       answer:
-          TargetLanguageText.fromJson(json['answer'] as Map<String, dynamic>),
+          NativeLanguageText.fromJson(json['answer'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$MatchAudioToImageToJson(MatchAudioToImage instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
-      'wordToTranslate': instance.wordToTranslate,
-      'options': instance.options,
-      'answer': instance.answer,
+      'wordToTranslate':
+          MatchAudioToImage._wordToTranslateToJson(instance.wordToTranslate),
+      'options': MatchAudioToImage._optionsToJson(instance.options),
+      'answer': MatchAudioToImage._answerToJson(instance.answer),
     };

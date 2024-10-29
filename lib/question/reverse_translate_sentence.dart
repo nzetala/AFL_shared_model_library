@@ -17,9 +17,15 @@ part 'reverse_translate_sentence.g.dart';
 
 @JsonSerializable()
 class ReverseTranslateSentence extends Question {
-  TargetLanguageText phrase;
-  List<NativeLanguageText> options;
-  List<NativeLanguageText> answer;
+
+  @JsonKey(toJson: _phraseToJson)
+  final TargetLanguageText phrase;
+
+  @JsonKey(toJson: _optionsToJson)
+  final List<NativeLanguageText> options;
+
+  @JsonKey(toJson: _answerToJson)
+  final List<NativeLanguageText> answer;
 
   ReverseTranslateSentence(
       {required super.questionId,
@@ -33,4 +39,16 @@ class ReverseTranslateSentence extends Question {
       _$ReverseTranslateSentenceFromJson(json);
   @override
   Map<String, dynamic> toJson() => _$ReverseTranslateSentenceToJson(this);
+
+  static List<Map<String, dynamic>> _answerToJson(List<NativeLanguageText> answer) {
+    return answer.map((answer) => answer.toJson()).toList();
+  }
+
+  static List<Map<String, dynamic>> _optionsToJson(List<NativeLanguageText> options) {
+    return options.map((option) => option.toJson()).toList();
+  }
+
+  static Map<String, dynamic> _phraseToJson(TargetLanguageText phrase) {
+    return phrase.toJson();
+  }
 }

@@ -17,7 +17,11 @@ part 'listen_and_identify.g.dart';
 @JsonSerializable()
 class ListenAndIdentify extends Question {
   final String audioUrl;
+
+  @JsonKey(toJson: _optionsToJson)
   final List<TargetLanguageText> options;
+
+  @JsonKey(toJson: _answerToJson)
   final TargetLanguageText answer;
 
   const ListenAndIdentify(
@@ -31,4 +35,12 @@ class ListenAndIdentify extends Question {
       _$ListenAndIdentifyFromJson(json);
   @override
   Map<String, dynamic> toJson() => _$ListenAndIdentifyToJson(this);
+
+  static Map<String, dynamic> _answerToJson(TargetLanguageText answer) {
+    return answer.toJson();
+  }
+
+  static List<Map<String, dynamic>> _optionsToJson(List<TargetLanguageText> options) {
+    return options.map((option) => option.toJson()).toList();
+  }
 }

@@ -22,6 +22,6 @@ Map<String, dynamic> _$ListenAndSelectToJson(ListenAndSelect instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
       'audioUrl': instance.audioUrl,
-      'answer': instance.answer,
-      'options': instance.options,
+      'answer': ListenAndSelect._answerToJson(instance.answer),
+      'options': ListenAndSelect._optionsToJson(instance.options),
     };

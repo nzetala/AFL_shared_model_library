@@ -18,5 +18,5 @@ Map<String, dynamic> _$WriteFromAudioToJson(WriteFromAudio instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
       'audioUrl': instance.audioUrl,
-      'answer': instance.answer,
+      'answer': WriteFromAudio._answerToJson(instance.answer),
     };
