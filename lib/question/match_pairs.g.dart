@@ -8,10 +8,6 @@ part of 'match_pairs.dart';
 
 MatchPairs _$MatchPairsFromJson(Map<String, dynamic> json) => MatchPairs(
       questionId: json['questionId'] as String,
-      options: (json['options'] as List<dynamic>)
-          .map((e) =>
-              TargetToNativeLanguagePair.fromJson(e as Map<String, dynamic>))
-          .toList(),
       answer: (json['answer'] as List<dynamic>)
           .map((e) =>
               TargetToNativeLanguagePair.fromJson(e as Map<String, dynamic>))
@@ -21,6 +17,5 @@ MatchPairs _$MatchPairsFromJson(Map<String, dynamic> json) => MatchPairs(
 Map<String, dynamic> _$MatchPairsToJson(MatchPairs instance) =>
     <String, dynamic>{
       'questionId': instance.questionId,
-      'options': MatchPairs._optionsToJson(instance.options),
       'answer': MatchPairs._answerToJson(instance.answer),
     };

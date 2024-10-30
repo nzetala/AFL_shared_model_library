@@ -17,14 +17,11 @@ part 'match_pairs.g.dart';
 @JsonSerializable()
 class MatchPairs extends Question {
 
-  @JsonKey(toJson: _optionsToJson)
-  final List<TargetToNativeLanguagePair> options;
-
   @JsonKey(toJson: _answerToJson)
   final List<TargetToNativeLanguagePair> answer;
 
   MatchPairs(
-      {required super.questionId, required this.options, required this.answer})
+      {required super.questionId, required this.answer})
       : super(questionType: QuestionType.listenAndIdentify);
 
   factory MatchPairs.fromJson(Map<String, dynamic> json) =>
@@ -36,10 +33,5 @@ class MatchPairs extends Question {
   static List<Map<String, dynamic>> _answerToJson(
       List<TargetToNativeLanguagePair> answer) {
     return answer.map((answer) => answer.toJson()).toList();
-  }
-
-  static List<Map<String, dynamic>> _optionsToJson(
-      List<TargetToNativeLanguagePair> options) {
-    return options.map((option) => option.toJson()).toList();
   }
 }
