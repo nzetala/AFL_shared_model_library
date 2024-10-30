@@ -31,7 +31,7 @@ class TranslateSentence extends Question {
       required this.phrase,
       required this.options,
       required this.answer})
-      : super(questionType: QuestionType.listenAndIdentify);
+      : super(questionType: QuestionType.translateSentence);
 
   factory TranslateSentence.fromJson(Map<String, dynamic> json) =>
       _$TranslateSentenceFromJson(json);

@@ -22,7 +22,7 @@ class MatchPairs extends Question {
 
   MatchPairs(
       {required super.questionId, required this.answer})
-      : super(questionType: QuestionType.listenAndIdentify);
+      : super(questionType: QuestionType.matchPairs);
 
   factory MatchPairs.fromJson(Map<String, dynamic> json) =>
       _$MatchPairsFromJson(json);

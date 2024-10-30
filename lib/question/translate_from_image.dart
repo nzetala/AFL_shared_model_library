@@ -30,7 +30,7 @@ class TranslateFromImage extends Question {
       required this.imageUrl,
       required this.wordToTranslate,
       required this.answer})
-      : super(questionType: QuestionType.listenAndIdentify);
+      : super(questionType: QuestionType.translateFromImage);
 
   factory TranslateFromImage.fromJson(Map<String, dynamic> json) =>
       _$TranslateFromImageFromJson(json);

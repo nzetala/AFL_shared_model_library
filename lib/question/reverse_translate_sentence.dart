@@ -32,7 +32,7 @@ class ReverseTranslateSentence extends Question {
       required this.phrase,
       required  this.options,
       required  this.answer})
-      : super(questionType: QuestionType.listenAndIdentify);
+      : super(questionType: QuestionType.reverseTranslateSentence);
 
   factory ReverseTranslateSentence.fromJson(
           Map<String, dynamic> json) =>

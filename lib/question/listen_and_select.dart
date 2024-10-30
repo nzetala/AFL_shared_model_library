@@ -30,7 +30,7 @@ class ListenAndSelect extends Question {
       required this.audioUrl,
       required this.options,
       required this.answer})
-      : super(questionType: QuestionType.listenAndIdentify);
+      : super(questionType: QuestionType.listenAndSelect);
 
   factory ListenAndSelect.fromJson(Map<String, dynamic> json) =>
       _$ListenAndSelectFromJson(json);

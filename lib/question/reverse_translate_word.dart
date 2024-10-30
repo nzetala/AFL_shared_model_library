@@ -32,7 +32,7 @@ class ReverseTranslateWord extends Question {
       required this.wordToTranslate,
       required this.options,
       required this.answer})
-      : super(questionType: QuestionType.listenAndIdentify);
+      : super(questionType: QuestionType.reverseTranslateWord);
 
   factory ReverseTranslateWord.fromJson(Map<String, dynamic> json) =>
       _$ReverseTranslateWordFromJson(json);

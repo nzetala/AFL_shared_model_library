@@ -33,7 +33,7 @@ class MatchAudioToImage extends Question {
       required this.wordToTranslate,
       required  this.options,
       required  this.answer})
-      : super(questionType: QuestionType.listenAndIdentify);
+      : super(questionType: QuestionType.matchAudioToImage);
 
   factory MatchAudioToImage.fromJson(Map<String, dynamic> json) => _$MatchAudioToImageFromJson(json);
   @override

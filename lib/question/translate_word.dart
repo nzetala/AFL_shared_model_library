@@ -32,7 +32,7 @@ class TranslateWord extends Question {
       required this.wordToTranslate,
       required this.options,
       required this.answer})
-      : super(questionType: QuestionType.listenAndIdentify);
+      : super(questionType: QuestionType.translateWord);
 
   factory TranslateWord.fromJson(Map<String, dynamic> json) =>
       _$TranslateWordFromJson(json);

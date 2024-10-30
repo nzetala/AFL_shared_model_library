@@ -2,6 +2,7 @@ enum QuestionType
 {
   listenAndSelect,
   translateWord,
+  reverseTranslateWord,
   translateSentence,
   reverseTranslateSentence,
   listenAndIdentify,
@@ -20,6 +21,8 @@ extension QuestionTypeExtension on QuestionType {
         return QuestionType.listenAndSelect;
       case 'translateWord':
         return QuestionType.translateWord;
+      case 'reverseTranslateSentence':
+        return QuestionType.reverseTranslateSentence;
       case 'translateSentence':
         return QuestionType.translateSentence;
       case 'reverseTranslateSentence':
@@ -49,6 +52,8 @@ extension QuestionTypeExtension on QuestionType {
         return 'listenAndSelect';
       case QuestionType.translateWord:
         return 'translateWord';
+      case QuestionType.reverseTranslateSentence:
+        return 'reverseTranslateSentence';
       case QuestionType.translateSentence:
         return 'translateSentence';
       case QuestionType.reverseTranslateSentence:

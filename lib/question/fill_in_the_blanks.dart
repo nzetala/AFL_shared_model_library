@@ -29,7 +29,7 @@ class FillInTheBlanks extends Question {
       required this.sentence,
       required this.options,
       required this.answer})
-      : super(questionType: QuestionType.listenAndIdentify);
+      : super(questionType: QuestionType.fillInTheBlanks);
 
   factory FillInTheBlanks.fromJson(Map<String, dynamic> json) =>
       _$FillInTheBlanksFromJson(json);

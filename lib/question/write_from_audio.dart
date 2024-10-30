@@ -23,7 +23,7 @@ class WriteFromAudio extends Question {
 
   WriteFromAudio(
       {required super.questionId, required this.audioUrl, required this.answer})
-      : super(questionType: QuestionType.listenAndIdentify);
+      : super(questionType: QuestionType.writeFromAudio);
 
   factory WriteFromAudio.fromJson(Map<String, dynamic> json) =>
       _$WriteFromAudioFromJson(json);
