@@ -17,7 +17,6 @@ part 'translate_word.g.dart';
 
 @JsonSerializable()
 class TranslateWord extends Question {
-
   @JsonKey(toJson: _wordToTranslateToJson)
   final NativeLanguageText wordToTranslate;
 
@@ -29,21 +28,25 @@ class TranslateWord extends Question {
 
   TranslateWord(
       {required super.questionId,
+      super.questionType = QuestionType.translateWord,
       required this.wordToTranslate,
       required this.options,
       required this.answer})
-      : super(questionType: QuestionType.translateWord);
+      : super();
 
   factory TranslateWord.fromJson(Map<String, dynamic> json) =>
       _$TranslateWordFromJson(json);
+
   @override
   Map<String, dynamic> toJson() => _$TranslateWordToJson(this);
 
-  static Map<String, dynamic> _wordToTranslateToJson(NativeLanguageText wordToTranslate) {
+  static Map<String, dynamic> _wordToTranslateToJson(
+      NativeLanguageText wordToTranslate) {
     return wordToTranslate.toJson();
   }
 
-  static List<Map<String, dynamic>> _optionsToJson(List<TargetLanguageText> options) {
+  static List<Map<String, dynamic>> _optionsToJson(
+      List<TargetLanguageText> options) {
     return options.map((option) => option.toJson()).toList();
   }
 

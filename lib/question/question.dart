@@ -14,6 +14,7 @@ import 'translate_sentence_reverse.dart';
 
 abstract class Question {
   final String questionId;
+
   final QuestionType questionType;
 
   const Question({required this.questionId, required this.questionType});
