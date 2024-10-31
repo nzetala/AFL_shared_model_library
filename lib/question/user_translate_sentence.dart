@@ -25,9 +25,10 @@ class UserTranslateSentence extends Question {
 
   UserTranslateSentence(
       {required super.questionId,
+      super.questionType = QuestionType.userTranslateSentence,
       required this.sentenceToTranslate,
       required this.answer})
-      : super(questionType: QuestionType.userTranslateSentence);
+      : super();
 
   factory UserTranslateSentence.fromJson(Map<String, dynamic> json) =>
       _$UserTranslateSentenceFromJson(json);

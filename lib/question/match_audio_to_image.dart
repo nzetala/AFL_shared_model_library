@@ -18,7 +18,6 @@ part 'match_audio_to_image.g.dart';
 
 @JsonSerializable()
 class MatchAudioToImage extends Question {
-
   @JsonKey(toJson: _wordToTranslateToJson)
   TargetLanguageText wordToTranslate;
 
@@ -30,12 +29,15 @@ class MatchAudioToImage extends Question {
 
   MatchAudioToImage(
       {required super.questionId,
+      super.questionType = QuestionType.matchAudioToImage,
       required this.wordToTranslate,
-      required  this.options,
-      required  this.answer})
-      : super(questionType: QuestionType.matchAudioToImage);
+      required this.options,
+      required this.answer})
+      : super();
 
-  factory MatchAudioToImage.fromJson(Map<String, dynamic> json) => _$MatchAudioToImageFromJson(json);
+  factory MatchAudioToImage.fromJson(Map<String, dynamic> json) =>
+      _$MatchAudioToImageFromJson(json);
+
   @override
   Map<String, dynamic> toJson() => _$MatchAudioToImageToJson(this);
 
@@ -43,11 +45,13 @@ class MatchAudioToImage extends Question {
     return answer.toJson();
   }
 
-  static List<Map<String, dynamic>> _optionsToJson(List<NativeLanguageToStringPair> options) {
+  static List<Map<String, dynamic>> _optionsToJson(
+      List<NativeLanguageToStringPair> options) {
     return options.map((option) => option.toJson()).toList();
   }
 
-  static Map<String, dynamic> _wordToTranslateToJson(TargetLanguageText wordToTranslate) {
+  static Map<String, dynamic> _wordToTranslateToJson(
+      TargetLanguageText wordToTranslate) {
     return wordToTranslate.toJson();
   }
 }

@@ -24,24 +24,27 @@ class ListenAndSelect extends Question {
   @JsonKey(toJson: _optionsToJson)
   final List<NativeLanguageText> options;
 
-
   ListenAndSelect(
       {required super.questionId,
+      super.questionType = QuestionType.listenAndSelect,
       required this.audioUrl,
       required this.options,
       required this.answer})
-      : super(questionType: QuestionType.listenAndSelect);
+      : super();
 
   factory ListenAndSelect.fromJson(Map<String, dynamic> json) =>
       _$ListenAndSelectFromJson(json);
+
   @override
   Map<String, dynamic> toJson() => _$ListenAndSelectToJson(this);
 
-  static List<Map<String, dynamic>> _answerToJson(List<NativeLanguageText> answer) {
+  static List<Map<String, dynamic>> _answerToJson(
+      List<NativeLanguageText> answer) {
     return answer.map((answer) => answer.toJson()).toList();
   }
 
-  static List<Map<String, dynamic>> _optionsToJson(List<NativeLanguageText> options) {
+  static List<Map<String, dynamic>> _optionsToJson(
+      List<NativeLanguageText> options) {
     return options.map((option) => option.toJson()).toList();
   }
 }

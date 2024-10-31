@@ -21,9 +21,12 @@ class WriteFromAudio extends Question {
   @JsonKey(toJson: _answerToJson)
   final NativeLanguageText answer;
 
-  WriteFromAudio(
-      {required super.questionId, required this.audioUrl, required this.answer})
-      : super(questionType: QuestionType.writeFromAudio);
+  WriteFromAudio({
+    required super.questionId,
+    super.questionType = QuestionType.writeFromAudio,
+    required this.audioUrl,
+    required this.answer,
+  }) : super();
 
   factory WriteFromAudio.fromJson(Map<String, dynamic> json) =>
       _$WriteFromAudioFromJson(json);

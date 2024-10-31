@@ -16,13 +16,14 @@ part 'match_pairs.g.dart';
 
 @JsonSerializable()
 class MatchPairs extends Question {
-
   @JsonKey(toJson: _answerToJson)
   final List<TargetToNativeLanguagePair> answer;
 
-  MatchPairs(
-      {required super.questionId, required this.answer})
-      : super(questionType: QuestionType.matchPairs);
+  MatchPairs({
+    required super.questionId,
+    super.questionType = QuestionType.matchPairs,
+    required this.answer,
+  }) : super();
 
   factory MatchPairs.fromJson(Map<String, dynamic> json) =>
       _$MatchPairsFromJson(json);

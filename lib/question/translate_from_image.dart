@@ -27,17 +27,20 @@ class TranslateFromImage extends Question {
 
   TranslateFromImage(
       {required super.questionId,
+      super.questionType = QuestionType.translateFromImage,
       required this.imageUrl,
       required this.wordToTranslate,
       required this.answer})
-      : super(questionType: QuestionType.translateFromImage);
+      : super();
 
   factory TranslateFromImage.fromJson(Map<String, dynamic> json) =>
       _$TranslateFromImageFromJson(json);
+
   @override
   Map<String, dynamic> toJson() => _$TranslateFromImageToJson(this);
 
-  static Map<String, dynamic> _wordToTranslateToJson(TargetLanguageText wordToTranslate) {
+  static Map<String, dynamic> _wordToTranslateToJson(
+      TargetLanguageText wordToTranslate) {
     return wordToTranslate.toJson();
   }
 

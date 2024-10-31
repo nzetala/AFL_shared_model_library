@@ -26,10 +26,11 @@ class FillInTheBlanks extends Question {
 
   const FillInTheBlanks(
       {required super.questionId,
+      super.questionType = QuestionType.fillInTheBlanks,
       required this.sentence,
       required this.options,
       required this.answer})
-      : super(questionType: QuestionType.fillInTheBlanks);
+      : super();
 
   factory FillInTheBlanks.fromJson(Map<String, dynamic> json) =>
       _$FillInTheBlanksFromJson(json);
@@ -37,11 +38,13 @@ class FillInTheBlanks extends Question {
   @override
   Map<String, dynamic> toJson() => _$FillInTheBlanksToJson(this);
 
-  static List<Map<String, dynamic>> _answerToJson(List<TargetLanguageText> answer) {
+  static List<Map<String, dynamic>> _answerToJson(
+      List<TargetLanguageText> answer) {
     return answer.map((answer) => answer.toJson()).toList();
   }
 
-  static List<Map<String, dynamic>> _optionsToJson(List<TargetLanguageText> options) {
+  static List<Map<String, dynamic>> _optionsToJson(
+      List<TargetLanguageText> options) {
     return options.map((option) => option.toJson()).toList();
   }
 }

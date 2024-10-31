@@ -24,15 +24,17 @@ class ListenAndIdentify extends Question {
   @JsonKey(toJson: _answerToJson)
   final TargetLanguageText answer;
 
-  const ListenAndIdentify(
-      {required super.questionId,
-      required this.audioUrl,
-      required this.options,
-      required this.answer,})
-      : super(questionType: QuestionType.listenAndIdentify);
+  const ListenAndIdentify({
+    required super.questionId,
+    super.questionType = QuestionType.listenAndIdentify,
+    required this.audioUrl,
+    required this.options,
+    required this.answer,
+  }) : super();
 
   factory ListenAndIdentify.fromJson(Map<String, dynamic> json) =>
       _$ListenAndIdentifyFromJson(json);
+
   @override
   Map<String, dynamic> toJson() => _$ListenAndIdentifyToJson(this);
 
@@ -40,7 +42,8 @@ class ListenAndIdentify extends Question {
     return answer.toJson();
   }
 
-  static List<Map<String, dynamic>> _optionsToJson(List<TargetLanguageText> options) {
+  static List<Map<String, dynamic>> _optionsToJson(
+      List<TargetLanguageText> options) {
     return options.map((option) => option.toJson()).toList();
   }
 }
