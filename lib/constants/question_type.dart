@@ -2,9 +2,9 @@ enum QuestionType
 {
   listenAndSelect,
   translateWord,
-  reverseTranslateWord,
+  translateWordReverse,
   translateSentence,
-  reverseTranslateSentence,
+  translateSentenceReverse,
   listenAndIdentify,
   fillInTheBlanks,
   matchAudioToImage,
@@ -21,12 +21,12 @@ extension QuestionTypeExtension on QuestionType {
         return QuestionType.listenAndSelect;
       case 'translateWord':
         return QuestionType.translateWord;
-      case 'reverseTranslateSentence':
-        return QuestionType.reverseTranslateSentence;
+      case 'translateWordReverse':
+        return QuestionType.translateWordReverse;
       case 'translateSentence':
         return QuestionType.translateSentence;
-      case 'reverseTranslateSentence':
-        return QuestionType.reverseTranslateSentence;
+      case 'translateSentenceReverse':
+        return QuestionType.translateSentenceReverse;
       case 'listenAndIdentify':
         return QuestionType.listenAndIdentify;
       case 'fillInTheBlanks':
@@ -52,12 +52,12 @@ extension QuestionTypeExtension on QuestionType {
         return 'listenAndSelect';
       case QuestionType.translateWord:
         return 'translateWord';
-      case QuestionType.reverseTranslateSentence:
-        return 'reverseTranslateSentence';
+      case QuestionType.translateWordReverse:
+        return 'translateWordReverse';
       case QuestionType.translateSentence:
         return 'translateSentence';
-      case QuestionType.reverseTranslateSentence:
-        return 'reverseTranslateSentence';
+      case QuestionType.translateSentenceReverse:
+        return 'translateSentenceReverse';
       case QuestionType.listenAndIdentify:
         return 'listenAndIdentify';
       case QuestionType.fillInTheBlanks:

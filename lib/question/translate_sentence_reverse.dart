@@ -1,5 +1,5 @@
 /*
-ReverseTranslateSentence
+TranslateSentenceReverse
 Instruction: Translate this sentence
 Input: Phrase (Language the user is learning), List of several words in disorder (User’s language)
 Result: Sub-list of one or more words (User’s language)
@@ -13,10 +13,10 @@ import '../constants/question_type.dart';
 import '../word/native_language_text.dart';
 import 'question.dart';
 
-part 'reverse_translate_sentence.g.dart';
+part 'translate_sentence_reverse.g.dart';
 
 @JsonSerializable()
-class ReverseTranslateSentence extends Question {
+class TranslateSentenceReverse extends Question {
 
   @JsonKey(toJson: _phraseToJson)
   final TargetLanguageText phrase;
@@ -27,18 +27,18 @@ class ReverseTranslateSentence extends Question {
   @JsonKey(toJson: _answerToJson)
   final List<NativeLanguageText> answer;
 
-  ReverseTranslateSentence(
+  TranslateSentenceReverse(
       {required super.questionId,
       required this.phrase,
       required  this.options,
       required  this.answer})
-      : super(questionType: QuestionType.reverseTranslateSentence);
+      : super(questionType: QuestionType.translateSentenceReverse);
 
-  factory ReverseTranslateSentence.fromJson(
+  factory TranslateSentenceReverse.fromJson(
           Map<String, dynamic> json) =>
-      _$ReverseTranslateSentenceFromJson(json);
+      _$TranslateSentenceReverseFromJson(json);
   @override
-  Map<String, dynamic> toJson() => _$ReverseTranslateSentenceToJson(this);
+  Map<String, dynamic> toJson() => _$TranslateSentenceReverseToJson(this);
 
   static List<Map<String, dynamic>> _answerToJson(List<NativeLanguageText> answer) {
     return answer.map((answer) => answer.toJson()).toList();

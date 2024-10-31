@@ -13,10 +13,10 @@ import '../constants/question_type.dart';
 import '../word/target_language_text.dart';
 import 'question.dart';
 
-part 'reverse_translate_word.g.dart';
+part 'translate_word_reverse.g.dart';
 
 @JsonSerializable()
-class ReverseTranslateWord extends Question {
+class TranslateWordReverse extends Question {
 
   @JsonKey(toJson: _wordToTranslateToJson)
   final TargetLanguageText wordToTranslate;
@@ -27,17 +27,17 @@ class ReverseTranslateWord extends Question {
   @JsonKey(toJson: _answerToJson)
   final NativeLanguageText answer;
 
-  ReverseTranslateWord(
+  TranslateWordReverse(
       {required super.questionId,
       required this.wordToTranslate,
       required this.options,
       required this.answer})
-      : super(questionType: QuestionType.reverseTranslateWord);
+      : super(questionType: QuestionType.translateWordReverse);
 
-  factory ReverseTranslateWord.fromJson(Map<String, dynamic> json) =>
-      _$ReverseTranslateWordFromJson(json);
+  factory TranslateWordReverse.fromJson(Map<String, dynamic> json) =>
+      _$TranslateWordReverseFromJson(json);
   @override
-  Map<String, dynamic> toJson() => _$ReverseTranslateWordToJson(this);
+  Map<String, dynamic> toJson() => _$TranslateWordReverseToJson(this);
 
   static Map<String, dynamic> _wordToTranslateToJson(TargetLanguageText wordToTranslate) {
     return wordToTranslate.toJson();

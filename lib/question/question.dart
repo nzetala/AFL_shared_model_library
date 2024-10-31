@@ -10,7 +10,7 @@ import 'listen_and_identify.dart';
 import 'listen_and_select.dart';
 import 'match_audio_to_image.dart';
 import 'match_pairs.dart';
-import 'reverse_translate_sentence.dart';
+import 'translate_sentence_reverse.dart';
 
 abstract class Question {
   final String questionId;
@@ -26,8 +26,8 @@ abstract class Question {
         return TranslateWord.fromJson(json);
       case QuestionType.translateSentence:
         return TranslateSentence.fromJson(json);
-      case QuestionType.reverseTranslateSentence:
-        return ReverseTranslateSentence.fromJson(json);
+      case QuestionType.translateSentenceReverse:
+        return TranslateSentenceReverse.fromJson(json);
       case QuestionType.listenAndIdentify:
         return ListenAndIdentify.fromJson(json);
       case QuestionType.fillInTheBlanks:

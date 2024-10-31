@@ -21,6 +21,12 @@ Input: One word (User’s language), List of 3 words (Language the user is learn
 Result: One word (Language the user is learning)
 Description: Users translate a given word from their native language to the target language.
 
+### TranslateWordReverse
+Instruction: How do you say it?
+Input: One word (Language the user is learning), List of 3 words (User’s language)
+Result: One word (User’s language)
+Description: Users translate a given word from their native language to the target language.
+
 ### ListenAndIdentify
 Instruction: What do you hear?
 Input: Audio (Language the user is learning), List of 2 words with similar pronunciation (Language the user is learning)
@@ -47,7 +53,7 @@ Input: Phrase (User’s language), List of several words in disorder (Language t
 Result: Sub-list of one or more words (Language the user is learning)
 Description: Users translate a sentence from their native language to the target language using a list of words.
 
-### ReverseTranslateSentence
+### TranslateSentenceReverse
 Instruction: Translate this sentence
 Input: Phrase (Language the user is learning), List of several words in disorder (User’s language)
 Result: Sub-list of one or more words (User’s language)
