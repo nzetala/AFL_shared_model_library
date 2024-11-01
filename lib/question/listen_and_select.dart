@@ -19,9 +19,11 @@ class ListenAndSelect extends Question {
   final String audioUrl;
 
   @JsonKey(toJson: _answerToJson)
+  @JsonKey(fromJson: _answerFromJson)
   final List<NativeLanguageText> answer;
 
   @JsonKey(toJson: _optionsToJson)
+  @JsonKey(fromJson: _optionsFromJson)
   final List<NativeLanguageText> options;
 
   ListenAndSelect(
@@ -46,5 +48,13 @@ class ListenAndSelect extends Question {
   static List<Map<String, dynamic>> _optionsToJson(
       List<NativeLanguageText> options) {
     return options.map((option) => option.toJson()).toList();
+  }
+
+  static List<NativeLanguageText> _answerFromJson(List<dynamic> json) {
+    return json.map((answer) => NativeLanguageText.fromJson(answer)).toList();
+  }
+
+  static List<NativeLanguageText> _optionsFromJson(List<dynamic> json) {
+    return json.map((option) => NativeLanguageText.fromJson(option)).toList();
   }
 }
