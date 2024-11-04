@@ -363,4 +363,109 @@ extension CountryCodeExtension on CountryCode {
         return '';
     }
   }
+
+  String getCountryFr() {
+    switch (this) {
+      case CountryCode.dz:
+        return 'Algérie';
+      case CountryCode.ao:
+        return 'Angola';
+      case CountryCode.bj:
+        return 'Bénin';
+      case CountryCode.bw:
+        return 'Botswana';
+      case CountryCode.bf:
+        return 'Burkina Faso';
+      case CountryCode.bi:
+        return 'Burundi';
+      case CountryCode.cv:
+        return 'Cap-Vert';
+      case CountryCode.cm:
+        return 'Cameroun';
+      case CountryCode.cf:
+        return 'République centrafricaine';
+      case CountryCode.td:
+        return 'Tchad';
+      case CountryCode.km:
+        return 'Comores';
+      case CountryCode.cg:
+        return 'Congo (Brazzaville)';
+      case CountryCode.cd:
+        return 'Congo (Kinshasa)';
+      case CountryCode.ci:
+        return 'Côte d\'Ivoire';
+      case CountryCode.dj:
+        return 'Djibouti';
+      case CountryCode.eg:
+        return 'Égypte';
+      case CountryCode.gq:
+        return 'Guinée équatoriale';
+      case CountryCode.er:
+        return 'Érythrée';
+      case CountryCode.sz:
+        return 'Eswatini';
+      case CountryCode.et:
+        return 'Éthiopie';
+      case CountryCode.ga:
+        return 'Gabon';
+      case CountryCode.gm:
+        return 'Gambie';
+      case CountryCode.gh:
+        return 'Ghana';
+      case CountryCode.gn:
+        return 'Guinée';
+      case CountryCode.gw:
+        return 'Guinée-Bissau';
+      case CountryCode.ke:
+        return 'Kenya';
+      case CountryCode.ls:
+        return 'Lesotho';
+      case CountryCode.lr:
+        return 'Libéria';
+      case CountryCode.ly:
+        return 'Libye';
+      case CountryCode.mg:
+        return 'Madagascar';
+      case CountryCode.mw:
+        return 'Malawi';
+      case CountryCode.ml:
+        return 'Mali';
+      case CountryCode.mr:
+        return 'Mauritanie';
+      case CountryCode.mu:
+        return 'Maurice';
+      case CountryCode.ma:
+        return 'Maroc';
+      case CountryCode.mz:
+        return 'Mozambique';
+      case CountryCode.na:
+        return 'Namibie';
+      case CountryCode.ne:
+        return 'Niger';
+      case CountryCode.ng:
+        return 'Nigeria';
+      case CountryCode.rw:
+        return 'Rwanda';
+      case CountryCode.st:
+        return 'São Tomé-et-Principe';
+      case CountryCode.sn:
+        return 'Sénégal';
+      case CountryCode.sc:
+        return 'Seychelles';
+      case CountryCode.sl:
+        return 'Sierra Leone';
+      case CountryCode.so:
+        return 'Somalie';
+      case CountryCode.za:
+        return 'Afrique du Sud';
+      case CountryCode.ss:
+        return 'Soudan du Sud';
+      case CountryCode.sd:
+        return 'Soudan';
+      case CountryCode.tz:
+        return 'Tanzanie';
+      default:
+        return '';
+    }
+  }
 }
