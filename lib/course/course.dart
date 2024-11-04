@@ -15,6 +15,7 @@ class Course {
   final String origin;
   final bool hasAudio;
   final bool isActive;
+  final CourseMetaData? metadata;
 
   const Course({
     required this.id,
@@ -26,6 +27,7 @@ class Course {
     required this.origin,
     required this.hasAudio,
     required this.isActive,
+    this.metadata,
   });
 
   factory Course.fromJson(Map<String, dynamic> json) => _$CourseFromJson(json);
