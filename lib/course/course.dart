@@ -2,21 +2,33 @@ import 'package:afl_model_library/word/native_language_text.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../constants/country_code.dart';
+import '../word/language_utils.dart';
 
 part 'course.g.dart';
 
 @JsonSerializable()
 class Course {
   final String id;
+
+  @JsonKey(toJson: nativeLanguageTextToJson)
   final NativeLanguageText name;
+
+  @JsonKey(toJson: nativeLanguageTextToJson)
   final NativeLanguageText? info;
+
+  @JsonKey(toJson: nativeLanguageTextToJson)
   final NativeLanguageText description;
+
+  @JsonKey(toJson: nativeLanguageTextToJson)
+  final NativeLanguageText? origin;
+
+  @JsonKey(toJson: _metadataToJson)
+  final CourseMetaData? metadata;
+
   final String imageUrl;
   final List<CountryCode> country;
-  final NativeLanguageText? origin;
   final bool hasAudio;
   final bool isActive;
-  final CourseMetaData? metadata;
 
   const Course({
     required this.id,
@@ -34,6 +46,11 @@ class Course {
   factory Course.fromJson(Map<String, dynamic> json) => _$CourseFromJson(json);
 
   Map<String, dynamic> toJson() => _$CourseToJson(this);
+
+  static Map<String, dynamic> _metadataToJson(CourseMetaData? courseMetaData) {
+    if (courseMetaData == null) return {};
+    return courseMetaData.toJson();
+  }
 }
 
 @JsonSerializable()

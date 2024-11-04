@@ -30,15 +30,15 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
 
 Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'id': instance.id,
-      'name': instance.name,
-      'info': instance.info,
-      'description': instance.description,
+      'name': nativeLanguageTextToJson(instance.name),
+      'info': nativeLanguageTextToJson(instance.info),
+      'description': nativeLanguageTextToJson(instance.description),
+      'origin': nativeLanguageTextToJson(instance.origin),
+      'metadata': Course._metadataToJson(instance.metadata),
       'imageUrl': instance.imageUrl,
       'country': instance.country.map((e) => _$CountryCodeEnumMap[e]!).toList(),
-      'origin': instance.origin,
       'hasAudio': instance.hasAudio,
       'isActive': instance.isActive,
-      'metadata': instance.metadata,
     };
 
 const _$CountryCodeEnumMap = {
