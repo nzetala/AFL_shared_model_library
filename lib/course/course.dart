@@ -61,10 +61,10 @@ class CourseMetaData {
   @JsonKey(toJson: _changedHistoryToJson)
   final List<ChangedAction>? changedHistory;
 
-  const CourseMetaData(
-    this.creator, {
+  const CourseMetaData({
+    required this.creator,
     required this.createdAt,
-    required this.changedHistory,
+    this.changedHistory,
   });
 
   factory CourseMetaData.fromJson(Map<String, dynamic> json) =>

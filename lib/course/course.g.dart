@@ -95,7 +95,7 @@ const _$CountryCodeEnumMap = {
 
 CourseMetaData _$CourseMetaDataFromJson(Map<String, dynamic> json) =>
     CourseMetaData(
-      json['creator'] as String,
+      creator: json['creator'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       changedHistory: (json['changedHistory'] as List<dynamic>?)
           ?.map((e) => ChangedAction.fromJson(e as Map<String, dynamic>))
