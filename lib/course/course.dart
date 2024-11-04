@@ -57,7 +57,9 @@ class Course {
 class CourseMetaData {
   final DateTime createdAt;
   final String creator;
-  final List<ChangedAction> changedHistory;
+
+  @JsonKey(toJson: _changedHistoryToJson)
+  final List<ChangedAction>? changedHistory;
 
   const CourseMetaData(
     this.creator, {
@@ -67,6 +69,14 @@ class CourseMetaData {
 
   factory CourseMetaData.fromJson(Map<String, dynamic> json) =>
       _$CourseMetaDataFromJson(json);
+
+  static List<Map<String, dynamic>> _changedHistoryToJson(
+      List<ChangedAction>? changedHistoryList) {
+    if (changedHistoryList == null) return [];
+    return changedHistoryList
+        .map((changedHistory) => changedHistory.toJson())
+        .toList();
+  }
 
   Map<String, dynamic> toJson() => _$CourseMetaDataToJson(this);
 }

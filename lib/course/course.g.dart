@@ -97,8 +97,8 @@ CourseMetaData _$CourseMetaDataFromJson(Map<String, dynamic> json) =>
     CourseMetaData(
       json['creator'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
-      changedHistory: (json['changedHistory'] as List<dynamic>)
-          .map((e) => ChangedAction.fromJson(e as Map<String, dynamic>))
+      changedHistory: (json['changedHistory'] as List<dynamic>?)
+          ?.map((e) => ChangedAction.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -106,7 +106,8 @@ Map<String, dynamic> _$CourseMetaDataToJson(CourseMetaData instance) =>
     <String, dynamic>{
       'createdAt': instance.createdAt.toIso8601String(),
       'creator': instance.creator,
-      'changedHistory': instance.changedHistory,
+      'changedHistory':
+          CourseMetaData._changedHistoryToJson(instance.changedHistory),
     };
 
 ChangedAction _$ChangedActionFromJson(Map<String, dynamic> json) =>
