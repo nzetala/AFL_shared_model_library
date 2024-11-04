@@ -8,16 +8,24 @@ part of 'course.dart';
 
 Course _$CourseFromJson(Map<String, dynamic> json) => Course(
       id: json['id'] as String,
-      name: json['name'] as String,
-      info: json['info'] as String,
-      description: json['description'] as String,
+      name: NativeLanguageText.fromJson(json['name'] as Map<String, dynamic>),
+      info: json['info'] == null
+          ? null
+          : NativeLanguageText.fromJson(json['info'] as Map<String, dynamic>),
+      description: NativeLanguageText.fromJson(
+          json['description'] as Map<String, dynamic>),
       imageUrl: json['imageUrl'] as String,
       country: (json['country'] as List<dynamic>)
           .map((e) => $enumDecode(_$CountryCodeEnumMap, e))
           .toList(),
-      origin: json['origin'] as String,
+      origin: json['origin'] == null
+          ? null
+          : NativeLanguageText.fromJson(json['origin'] as Map<String, dynamic>),
       hasAudio: json['hasAudio'] as bool,
       isActive: json['isActive'] as bool,
+      metadata: json['metadata'] == null
+          ? null
+          : CourseMetaData.fromJson(json['metadata'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
@@ -30,6 +38,7 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'origin': instance.origin,
       'hasAudio': instance.hasAudio,
       'isActive': instance.isActive,
+      'metadata': instance.metadata,
     };
 
 const _$CountryCodeEnumMap = {
