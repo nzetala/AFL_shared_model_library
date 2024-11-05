@@ -1,3 +1,5 @@
+import 'package:afl_model_library/word/target_language_text.dart';
+
 import 'native_language_text.dart';
 
 Map<String, dynamic> nativeLanguageTextToJson(
@@ -6,4 +8,12 @@ Map<String, dynamic> nativeLanguageTextToJson(
     return {};
   }
   return nativeLanguageText.toJson();
+}
+
+Map<String, dynamic> targetLanguageTextToJson(
+    TargetLanguageText? targetLanguageText) {
+  if (targetLanguageText == null) {
+    return {};
+  }
+  return targetLanguageText.toJson();
 }

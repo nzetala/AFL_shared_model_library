@@ -7,15 +7,9 @@ part of 'lesson.dart';
 // **************************************************************************
 
 Lesson _$LessonFromJson(Map<String, dynamic> json) => Lesson(
-      json['lessonId'] as String,
-      Lesson._questionsFromJson(json['questions'] as List),
-      json['avatar'] as String,
-      json['name'] as String,
+      json['lessonNumber'] as String,
     );
 
 Map<String, dynamic> _$LessonToJson(Lesson instance) => <String, dynamic>{
-      'lessonId': instance.lessonId,
-      'avatar': instance.avatar,
-      'name': instance.name,
-      'questions': Lesson._questionsToJson(instance.questions),
+      'lessonNumber': instance.lessonNumber,
     };
