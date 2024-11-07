@@ -7,16 +7,18 @@ part of 'lexicon_text.dart';
 // **************************************************************************
 
 LexiconText _$LexiconTextFromJson(Map<String, dynamic> json) => LexiconText(
-      textToTranslate: TargetLanguageText.fromJson(
-          json['textToTranslate'] as Map<String, dynamic>),
-      translatedText: NativeLanguageText.fromJson(
-          json['translatedText'] as Map<String, dynamic>),
+      targetLanguageText: TargetLanguageText.fromJson(
+          json['targetLanguageText'] as Map<String, dynamic>),
+      nativeLanguageText: NativeLanguageText.fromJson(
+          json['nativeLanguageText'] as Map<String, dynamic>),
       textId: json['textId'] as String,
     );
 
 Map<String, dynamic> _$LexiconTextToJson(LexiconText instance) =>
     <String, dynamic>{
       'textId': instance.textId,
-      'textToTranslate': targetLanguageTextToJson(instance.textToTranslate),
-      'translatedText': nativeLanguageTextToJson(instance.translatedText),
+      'targetLanguageText':
+          targetLanguageTextToJson(instance.targetLanguageText),
+      'nativeLanguageText':
+          nativeLanguageTextToJson(instance.nativeLanguageText),
     };

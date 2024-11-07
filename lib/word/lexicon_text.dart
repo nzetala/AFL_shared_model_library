@@ -11,14 +11,14 @@ class LexiconText {
   final String textId;
 
   @JsonKey(toJson: targetLanguageTextToJson)
-  final TargetLanguageText textToTranslate;
+  final TargetLanguageText targetLanguageText;
 
   @JsonKey(toJson: nativeLanguageTextToJson)
-  final NativeLanguageText translatedText;
+  final NativeLanguageText nativeLanguageText;
 
   LexiconText(
-      {required this.textToTranslate,
-      required this.translatedText,
+      {required this.targetLanguageText,
+      required this.nativeLanguageText,
       required this.textId});
 
   factory LexiconText.fromJson(Map<String, dynamic> json) =>
