@@ -12,10 +12,12 @@ DictionaryText _$DictionaryTextFromJson(Map<String, dynamic> json) =>
           json['textToTranslate'] as Map<String, dynamic>),
       translatedText: NativeLanguageText.fromJson(
           json['translatedText'] as Map<String, dynamic>),
+      wordId: json['wordId'] as String,
     );
 
 Map<String, dynamic> _$DictionaryTextToJson(DictionaryText instance) =>
     <String, dynamic>{
+      'wordId': instance.wordId,
       'textToTranslate': targetLanguageTextToJson(instance.textToTranslate),
       'translatedText': nativeLanguageTextToJson(instance.translatedText),
     };

@@ -8,13 +8,18 @@ part 'dictionary_text.g.dart';
 
 @JsonSerializable()
 class DictionaryText {
+  final String wordId;
+
   @JsonKey(toJson: targetLanguageTextToJson)
   final TargetLanguageText textToTranslate;
 
   @JsonKey(toJson: nativeLanguageTextToJson)
   final NativeLanguageText translatedText;
 
-  DictionaryText({required this.textToTranslate, required this.translatedText});
+  DictionaryText(
+      {required this.textToTranslate,
+      required this.translatedText,
+      required this.wordId});
 
   factory DictionaryText.fromJson(Map<String, dynamic> json) =>
       _$DictionaryTextFromJson(json);
