@@ -1,23 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'dictionary_text.dart';
+part of 'lexicon_text.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-DictionaryText _$DictionaryTextFromJson(Map<String, dynamic> json) =>
-    DictionaryText(
+LexiconText _$LexiconTextFromJson(Map<String, dynamic> json) => LexiconText(
       textToTranslate: TargetLanguageText.fromJson(
           json['textToTranslate'] as Map<String, dynamic>),
       translatedText: NativeLanguageText.fromJson(
           json['translatedText'] as Map<String, dynamic>),
-      wordId: json['wordId'] as String,
+      textId: json['textId'] as String,
     );
 
-Map<String, dynamic> _$DictionaryTextToJson(DictionaryText instance) =>
+Map<String, dynamic> _$LexiconTextToJson(LexiconText instance) =>
     <String, dynamic>{
-      'wordId': instance.wordId,
+      'textId': instance.textId,
       'textToTranslate': targetLanguageTextToJson(instance.textToTranslate),
       'translatedText': nativeLanguageTextToJson(instance.translatedText),
     };
