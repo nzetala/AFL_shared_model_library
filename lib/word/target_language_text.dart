@@ -6,7 +6,7 @@ part 'target_language_text.g.dart';
 class TargetLanguageText {
   final String text;
   final String? romanizedText;
-  final String audioUrl;
+  final String? audioUrl;
 
   TargetLanguageText({required this.text, required this.audioUrl, this.romanizedText});
 
