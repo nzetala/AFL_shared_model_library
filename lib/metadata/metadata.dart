@@ -4,8 +4,8 @@ part 'metadata.g.dart';
 
 @JsonSerializable()
 class BasicMetadata {
-  final DateTime createdAt;
-  final String creator;
+  final DateTime? createdAt;
+  final String? creator;
 
   @JsonKey(toJson: _changedHistoryToJson)
   final List<ChangedAction>? changedHistory;
