@@ -9,7 +9,7 @@ class Chapter {
   final String chapterNumber;
 
   @JsonKey(toJson: metadataToJson)
-  final Metadata? metadata;
+  final BasicMetadata? metadata;
 
   const Chapter({required this.chapterNumber, this.metadata});
 

@@ -18,7 +18,7 @@ class LexiconText {
   final NativeLanguageText nativeLanguageText;
 
   @JsonKey(toJson: metadataToJson)
-  final Metadata? metadata;
+  final BasicMetadata? metadata;
 
   LexiconText(
       {required this.targetLanguageText,

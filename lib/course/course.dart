@@ -24,7 +24,7 @@ class Course {
   final NativeLanguageText? origin;
 
   @JsonKey(toJson: metadataToJson)
-  final Metadata? metadata;
+  final BasicMetadata? metadata;
 
   final String imageUrl;
   final List<CountryCode> country;

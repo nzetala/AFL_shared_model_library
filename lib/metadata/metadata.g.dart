@@ -6,7 +6,8 @@ part of 'metadata.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Metadata _$MetadataFromJson(Map<String, dynamic> json) => Metadata(
+BasicMetadata _$BasicMetadataFromJson(Map<String, dynamic> json) =>
+    BasicMetadata(
       creator: json['creator'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       changedHistory: (json['changedHistory'] as List<dynamic>?)
@@ -14,10 +15,12 @@ Metadata _$MetadataFromJson(Map<String, dynamic> json) => Metadata(
           .toList(),
     );
 
-Map<String, dynamic> _$MetadataToJson(Metadata instance) => <String, dynamic>{
+Map<String, dynamic> _$BasicMetadataToJson(BasicMetadata instance) =>
+    <String, dynamic>{
       'createdAt': instance.createdAt.toIso8601String(),
       'creator': instance.creator,
-      'changedHistory': Metadata._changedHistoryToJson(instance.changedHistory),
+      'changedHistory':
+          BasicMetadata._changedHistoryToJson(instance.changedHistory),
     };
 
 ChangedAction _$ChangedActionFromJson(Map<String, dynamic> json) =>

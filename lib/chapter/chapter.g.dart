@@ -10,7 +10,7 @@ Chapter _$ChapterFromJson(Map<String, dynamic> json) => Chapter(
       chapterNumber: json['chapterNumber'] as String,
       metadata: json['metadata'] == null
           ? null
-          : Metadata.fromJson(json['metadata'] as Map<String, dynamic>),
+          : BasicMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ChapterToJson(Chapter instance) => <String, dynamic>{

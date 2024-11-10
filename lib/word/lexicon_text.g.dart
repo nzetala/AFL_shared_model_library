@@ -14,7 +14,7 @@ LexiconText _$LexiconTextFromJson(Map<String, dynamic> json) => LexiconText(
       textId: json['textId'] as String,
       metadata: json['metadata'] == null
           ? null
-          : Metadata.fromJson(json['metadata'] as Map<String, dynamic>),
+          : BasicMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$LexiconTextToJson(LexiconText instance) =>

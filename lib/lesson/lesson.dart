@@ -9,7 +9,7 @@ class Lesson {
   final String lessonNumber;
 
   @JsonKey(toJson: metadataToJson)
-  final Metadata? metadata;
+  final BasicMetadata? metadata;
 
   const Lesson(this.lessonNumber, this.metadata);
 

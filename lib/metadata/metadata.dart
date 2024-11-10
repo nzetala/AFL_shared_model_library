@@ -3,21 +3,21 @@ import 'package:json_annotation/json_annotation.dart';
 part 'metadata.g.dart';
 
 @JsonSerializable()
-class Metadata {
+class BasicMetadata {
   final DateTime createdAt;
   final String creator;
 
   @JsonKey(toJson: _changedHistoryToJson)
   final List<ChangedAction>? changedHistory;
 
-  const Metadata({
+  const BasicMetadata({
     required this.creator,
     required this.createdAt,
     this.changedHistory,
   });
 
-  factory Metadata.fromJson(Map<String, dynamic> json) =>
-      _$MetadataFromJson(json);
+  factory BasicMetadata.fromJson(Map<String, dynamic> json) =>
+      _$BasicMetadataFromJson(json);
 
   static List<Map<String, dynamic>> _changedHistoryToJson(
       List<ChangedAction>? changedHistoryList) {
@@ -27,7 +27,7 @@ class Metadata {
         .toList();
   }
 
-  Map<String, dynamic> toJson() => _$MetadataToJson(this);
+  Map<String, dynamic> toJson() => _$BasicMetadataToJson(this);
 }
 
 @JsonSerializable()
@@ -48,7 +48,7 @@ class ChangedAction {
   Map<String, dynamic> toJson() => _$ChangedActionToJson(this);
 }
 
-Map<String, dynamic> metadataToJson(Metadata? courseMetaData) {
+Map<String, dynamic> metadataToJson(BasicMetadata? courseMetaData) {
   if (courseMetaData == null) return {};
   return courseMetaData.toJson();
 }

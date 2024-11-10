@@ -25,7 +25,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
       isActive: json['isActive'] as bool,
       metadata: json['metadata'] == null
           ? null
-          : Metadata.fromJson(json['metadata'] as Map<String, dynamic>),
+          : BasicMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
