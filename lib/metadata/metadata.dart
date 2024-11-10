@@ -4,7 +4,7 @@ part 'metadata.g.dart';
 
 @JsonSerializable()
 class BasicMetadata {
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final String? creator;
 
   @JsonKey(toJson: _changedHistoryToJson)
@@ -12,7 +12,7 @@ class BasicMetadata {
 
   const BasicMetadata({
     this.creator,
-    this.createdAt,
+    required this.createdAt,
     this.changedHistory,
   });
 
