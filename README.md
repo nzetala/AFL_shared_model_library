@@ -92,9 +92,24 @@ Result: Text written by the user (User’s language)
 Description: Users listen to an audio clip and write down what they hear in their native language.
 
 
-## Features
+## Firebase Naming conventions
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+### Collection Names
+Firebase recommends using plural nouns for collection names (e.g. "users", "posts", "items") 1
+This is a matter of preference and doesn't affect how the database functions 1
+Some common patterns include:
+Using lowercase letters
+Avoiding special characters except underscores
+Keeping names concise but descriptive
+
+Use plural nouns for collection names (e.g., "users", "posts", "items") 1.
+Keep collection names lowercase (e.g., "user_profiles", not "UserProfiles") 1.
+Avoid special characters except underscores (e.g., "user_profiles", not "user-profiles") 1.
+Be consistent with your chosen naming scheme throughout your project
+
+### Document Fields
+Individual document fields are typically named using camelCase (e.g. "userName", "firstName", "lastName") 1
+Singular nouns are often used for field names (e.g. "name", "title", "price")
 
 ## Getting started
 

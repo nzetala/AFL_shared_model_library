@@ -8,5 +8,5 @@ class DatabasePath {
       '/DEV/Learn/Courses/$courseId/lexicon/$wordId';
 
   static String getLexiconDraftPath(String courseId) =>
-      '/DEV/Learn/Courses/$courseId/draft/lexicon';
+      '/DEV/Learn/Courses/$courseId/draft_lexicons/';
 }
