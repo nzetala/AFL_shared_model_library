@@ -33,3 +33,21 @@ Map<String, dynamic> _$ChangedActionToJson(ChangedAction instance) =>
       'updatedAt': instance.updatedAt.toIso8601String(),
       'changes': instance.changes,
     };
+
+AudioMetadata _$AudioMetadataFromJson(Map<String, dynamic> json) =>
+    AudioMetadata(
+      creator: json['creator'] as String?,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      courseId: json['courseId'] as String?,
+      wordId: json['wordId'] as String?,
+      wordText: json['wordText'] as String,
+    );
+
+Map<String, dynamic> _$AudioMetadataToJson(AudioMetadata instance) =>
+    <String, dynamic>{
+      'createdAt': instance.createdAt.toIso8601String(),
+      'creator': instance.creator,
+      'courseId': instance.courseId,
+      'wordId': instance.wordId,
+      'wordText': instance.wordText,
+    };

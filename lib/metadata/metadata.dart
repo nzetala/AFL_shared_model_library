@@ -49,6 +49,27 @@ class ChangedAction {
 }
 
 Map<String, dynamic> metadataToJson(Metadata? courseMetaData) {
-if (courseMetaData == null) return {};
-return courseMetaData.toJson();
+  if (courseMetaData == null) return {};
+  return courseMetaData.toJson();
+}
+
+@JsonSerializable()
+class AudioMetadata {
+  final DateTime createdAt;
+  final String? creator;
+  final String? courseId;
+  final String? wordId;
+  final String wordText;
+
+  const AudioMetadata(
+      {this.creator,
+      required this.createdAt,
+      this.courseId,
+      this.wordId,
+      required this.wordText});
+
+  factory AudioMetadata.fromJson(Map<String, dynamic> json) =>
+      _$AudioMetadataFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AudioMetadataToJson(this);
 }
