@@ -10,3 +10,9 @@ class DatabasePath {
   static String getLexiconDraftPath(String courseId) =>
       '/DEV/Learn/Courses/$courseId/draft_lexicons/';
 }
+
+class CloudStoragePath {
+  static String getAudioPath(
+          String storageBucket, String courseId, String filename) =>
+      'https://firebasestorage.googleapis.com/v0/b/$storageBucket/o?name=dev_data/audios/$courseId/$filename';
+}
