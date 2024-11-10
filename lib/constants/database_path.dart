@@ -13,6 +13,8 @@ class DatabasePath {
 
 class CloudStoragePath {
   static String getAudioPath(
-          String storageBucket, String courseId, String filename) =>
+          {required String storageBucket,
+          required String courseId,
+          required String filename}) =>
       'https://firebasestorage.googleapis.com/v0/b/$storageBucket/o?name=dev_data/audios/$courseId/$filename';
 }
