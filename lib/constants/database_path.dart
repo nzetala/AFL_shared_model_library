@@ -6,4 +6,7 @@ class DatabasePath {
 
   static String getWordPath(String courseId, String wordId) =>
       '/DEV/Learn/Courses/$courseId/lexicon/$wordId';
+
+  static String getLexiconDraftPath(String courseId) =>
+      '/DEV/Learn/Courses/$courseId/draft/lexicon';
 }

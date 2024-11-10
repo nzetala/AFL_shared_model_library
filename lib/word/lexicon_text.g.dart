@@ -12,6 +12,9 @@ LexiconText _$LexiconTextFromJson(Map<String, dynamic> json) => LexiconText(
       nativeLanguageText: NativeLanguageText.fromJson(
           json['nativeLanguageText'] as Map<String, dynamic>),
       textId: json['textId'] as String,
+      metadata: json['metadata'] == null
+          ? null
+          : Metadata.fromJson(json['metadata'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$LexiconTextToJson(LexiconText instance) =>
@@ -21,4 +24,5 @@ Map<String, dynamic> _$LexiconTextToJson(LexiconText instance) =>
           targetLanguageTextToJson(instance.targetLanguageText),
       'nativeLanguageText':
           nativeLanguageTextToJson(instance.nativeLanguageText),
+      'metadata': metadataToJson(instance.metadata),
     };

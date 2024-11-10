@@ -1,12 +1,17 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../metadata/metadata.dart';
+
 part 'chapter.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Chapter {
   final String chapterNumber;
 
-  const Chapter({required this.chapterNumber});
+  @JsonKey(toJson: metadataToJson)
+  final Metadata? metadata;
+
+  const Chapter({required this.chapterNumber, this.metadata});
 
   factory Chapter.fromJson(Map<String, dynamic> json) =>
       _$ChapterFromJson(json);

@@ -1,6 +1,7 @@
 import 'package:afl_model_library/word/target_language_text.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import '../metadata/metadata.dart';
 import 'language_utils.dart';
 import 'native_language_text.dart';
 
@@ -16,10 +17,14 @@ class LexiconText {
   @JsonKey(toJson: nativeLanguageTextToJson)
   final NativeLanguageText nativeLanguageText;
 
+  @JsonKey(toJson: metadataToJson)
+  final Metadata? metadata;
+
   LexiconText(
       {required this.targetLanguageText,
       required this.nativeLanguageText,
-      required this.textId});
+      required this.textId,
+      this.metadata});
 
   factory LexiconText.fromJson(Map<String, dynamic> json) =>
       _$LexiconTextFromJson(json);

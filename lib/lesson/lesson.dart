@@ -1,14 +1,19 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'lesson.g.dart';
+import '../metadata/metadata.dart';
 
+part 'lesson.g.dart';
 
 @JsonSerializable()
 class Lesson {
   final String lessonNumber;
 
-  const Lesson(this.lessonNumber);
+  @JsonKey(toJson: metadataToJson)
+  final Metadata? metadata;
+
+  const Lesson(this.lessonNumber, this.metadata);
 
   factory Lesson.fromJson(Map<String, dynamic> json) => _$LessonFromJson(json);
+
   Map<String, dynamic> toJson() => _$LessonToJson(this);
 }
