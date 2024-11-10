@@ -11,8 +11,8 @@ class BasicMetadata {
   final List<ChangedAction>? changedHistory;
 
   const BasicMetadata({
-    required this.creator,
-    required this.createdAt,
+    this.creator,
+    this.createdAt,
     this.changedHistory,
   });
 

@@ -8,8 +8,10 @@ part of 'metadata.dart';
 
 BasicMetadata _$BasicMetadataFromJson(Map<String, dynamic> json) =>
     BasicMetadata(
-      creator: json['creator'] as String,
-      createdAt: DateTime.parse(json['createdAt'] as String),
+      creator: json['creator'] as String?,
+      createdAt: json['createdAt'] == null
+          ? null
+          : DateTime.parse(json['createdAt'] as String),
       changedHistory: (json['changedHistory'] as List<dynamic>?)
           ?.map((e) => ChangedAction.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -17,7 +19,7 @@ BasicMetadata _$BasicMetadataFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$BasicMetadataToJson(BasicMetadata instance) =>
     <String, dynamic>{
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': instance.createdAt?.toIso8601String(),
       'creator': instance.creator,
       'changedHistory':
           BasicMetadata._changedHistoryToJson(instance.changedHistory),
