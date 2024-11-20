@@ -1,5 +1,5 @@
 class DatabasePath {
-  static String getUserPath() => '/users';
+  static String getUsersPath() => '/users';
 
   static String getCoursesPath() => '/DEV/Learn/Courses';
 
