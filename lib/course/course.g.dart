@@ -25,7 +25,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
       isActive: json['isActive'] as bool,
       metadata: json['metadata'] == null
           ? null
-          : CourseMetaData.fromJson(json['metadata'] as Map<String, dynamic>),
+          : BasicMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
@@ -34,7 +34,7 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'info': nativeLanguageTextToJson(instance.info),
       'description': nativeLanguageTextToJson(instance.description),
       'origin': nativeLanguageTextToJson(instance.origin),
-      'metadata': Course._metadataToJson(instance.metadata),
+      'metadata': metadataToJson(instance.metadata),
       'imageUrl': instance.imageUrl,
       'country': instance.country.map((e) => _$CountryCodeEnumMap[e]!).toList(),
       'hasAudio': instance.hasAudio,
@@ -92,34 +92,3 @@ const _$CountryCodeEnumMap = {
   CountryCode.sd: 'sd',
   CountryCode.tz: 'tz',
 };
-
-CourseMetaData _$CourseMetaDataFromJson(Map<String, dynamic> json) =>
-    CourseMetaData(
-      creator: json['creator'] as String,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      changedHistory: (json['changedHistory'] as List<dynamic>?)
-          ?.map((e) => ChangedAction.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$CourseMetaDataToJson(CourseMetaData instance) =>
-    <String, dynamic>{
-      'createdAt': instance.createdAt.toIso8601String(),
-      'creator': instance.creator,
-      'changedHistory':
-          CourseMetaData._changedHistoryToJson(instance.changedHistory),
-    };
-
-ChangedAction _$ChangedActionFromJson(Map<String, dynamic> json) =>
-    ChangedAction(
-      author: json['author'] as String,
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-      changes: Map<String, String>.from(json['changes'] as Map),
-    );
-
-Map<String, dynamic> _$ChangedActionToJson(ChangedAction instance) =>
-    <String, dynamic>{
-      'author': instance.author,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'changes': instance.changes,
-    };

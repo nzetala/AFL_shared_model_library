@@ -9,7 +9,7 @@ part of 'target_language_text.dart';
 TargetLanguageText _$TargetLanguageTextFromJson(Map<String, dynamic> json) =>
     TargetLanguageText(
       text: json['text'] as String,
-      audioUrl: json['audioUrl'] as String,
+      audioUrl: json['audioUrl'] as String?,
       romanizedText: json['romanizedText'] as String?,
     );
 
