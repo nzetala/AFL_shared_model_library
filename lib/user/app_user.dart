@@ -9,25 +9,27 @@ class AppUser {
   final String id;
   final String username;
   final String email;
-  final String displayName;
   final GenderAgeCategory genderAgeCategory;
+  final String? displayName;
   final String? contactPhone;
   final String? contactEmail;
   final String? photoURL;
   final String? createdAt;
   final String? lastLogin;
   final UserRoleType? role;
+  final List<String>? requestedCourseIds;
   final List<String>? authorizedCourseIds;
 
   const AppUser({
     required this.id,
     required this.username,
     required this.email,
-    required this.displayName,
+    this.displayName,
     required this.genderAgeCategory,
     this.contactPhone,
     this.contactEmail,
     this.role,
+    this.requestedCourseIds,
     this.authorizedCourseIds,
     this.photoURL,
     this.createdAt,
