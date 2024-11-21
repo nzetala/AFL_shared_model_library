@@ -10,12 +10,14 @@ AppUser _$AppUserFromJson(Map<String, dynamic> json) => AppUser(
       id: json['id'] as String,
       username: json['username'] as String,
       email: json['email'] as String,
-      displayName: json['displayName'] as String,
       genderAgeCategory:
           $enumDecode(_$GenderAgeCategoryEnumMap, json['genderAgeCategory']),
       contactPhone: json['contactPhone'] as String?,
       contactEmail: json['contactEmail'] as String?,
       role: $enumDecodeNullable(_$UserRoleTypeEnumMap, json['role']),
+      requestedCourseIds: (json['requestedCourseIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       authorizedCourseIds: (json['authorizedCourseIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -28,7 +30,6 @@ Map<String, dynamic> _$AppUserToJson(AppUser instance) => <String, dynamic>{
       'id': instance.id,
       'username': instance.username,
       'email': instance.email,
-      'displayName': instance.displayName,
       'genderAgeCategory':
           _$GenderAgeCategoryEnumMap[instance.genderAgeCategory]!,
       'contactPhone': instance.contactPhone,
@@ -37,6 +38,7 @@ Map<String, dynamic> _$AppUserToJson(AppUser instance) => <String, dynamic>{
       'createdAt': instance.createdAt,
       'lastLogin': instance.lastLogin,
       'role': _$UserRoleTypeEnumMap[instance.role],
+      'requestedCourseIds': instance.requestedCourseIds,
       'authorizedCourseIds': instance.authorizedCourseIds,
     };
 
