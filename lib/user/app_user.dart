@@ -10,7 +10,6 @@ class AppUser {
   final String username;
   final String email;
   final GenderAgeCategory genderAgeCategory;
-  final String? displayName;
   final String? contactPhone;
   final String? contactEmail;
   final String? photoURL;
@@ -24,7 +23,6 @@ class AppUser {
     required this.id,
     required this.username,
     required this.email,
-    this.displayName,
     required this.genderAgeCategory,
     this.contactPhone,
     this.contactEmail,
