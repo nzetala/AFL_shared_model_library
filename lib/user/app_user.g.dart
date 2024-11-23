@@ -13,7 +13,7 @@ AppUser _$AppUserFromJson(Map<String, dynamic> json) => AppUser(
       genderAgeCategory:
           $enumDecode(_$GenderAgeCategoryEnumMap, json['genderAgeCategory']),
       dateAcceptedTermsAndConditions:
-          DateTime.parse(json['dateAcceptedTermsAndConditions'] as String),
+          json['dateAcceptedTermsAndConditions'] as String,
       ipAddressWhenAcceptedTermsAndConditions:
           json['ipAddressWhenAcceptedTermsAndConditions'] as String?,
       contactPhone: json['contactPhone'] as String?,
@@ -44,8 +44,7 @@ Map<String, dynamic> _$AppUserToJson(AppUser instance) => <String, dynamic>{
       'role': _$UserRoleTypeEnumMap[instance.role],
       'requestedCourseIds': instance.requestedCourseIds,
       'authorizedCourseIds': instance.authorizedCourseIds,
-      'dateAcceptedTermsAndConditions':
-          instance.dateAcceptedTermsAndConditions.toIso8601String(),
+      'dateAcceptedTermsAndConditions': instance.dateAcceptedTermsAndConditions,
       'ipAddressWhenAcceptedTermsAndConditions':
           instance.ipAddressWhenAcceptedTermsAndConditions,
     };

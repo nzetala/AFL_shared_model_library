@@ -18,7 +18,7 @@ class AppUser {
   final UserRoleType? role;
   final List<String>? requestedCourseIds;
   final List<String>? authorizedCourseIds;
-  final DateTime dateAcceptedTermsAndConditions;
+  final String dateAcceptedTermsAndConditions;
   final String? ipAddressWhenAcceptedTermsAndConditions;
 
   const AppUser({
