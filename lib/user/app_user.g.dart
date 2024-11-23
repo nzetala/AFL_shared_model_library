@@ -12,6 +12,10 @@ AppUser _$AppUserFromJson(Map<String, dynamic> json) => AppUser(
       email: json['email'] as String,
       genderAgeCategory:
           $enumDecode(_$GenderAgeCategoryEnumMap, json['genderAgeCategory']),
+      dateAcceptedTermsAndConditions:
+          DateTime.parse(json['dateAcceptedTermsAndConditions'] as String),
+      ipAddressWhenAcceptedTermsAndConditions:
+          json['ipAddressWhenAcceptedTermsAndConditions'] as String?,
       contactPhone: json['contactPhone'] as String?,
       contactEmail: json['contactEmail'] as String?,
       role: $enumDecodeNullable(_$UserRoleTypeEnumMap, json['role']),
@@ -40,6 +44,10 @@ Map<String, dynamic> _$AppUserToJson(AppUser instance) => <String, dynamic>{
       'role': _$UserRoleTypeEnumMap[instance.role],
       'requestedCourseIds': instance.requestedCourseIds,
       'authorizedCourseIds': instance.authorizedCourseIds,
+      'dateAcceptedTermsAndConditions':
+          instance.dateAcceptedTermsAndConditions.toIso8601String(),
+      'ipAddressWhenAcceptedTermsAndConditions':
+          instance.ipAddressWhenAcceptedTermsAndConditions,
     };
 
 const _$GenderAgeCategoryEnumMap = {

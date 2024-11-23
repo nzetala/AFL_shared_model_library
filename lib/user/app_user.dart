@@ -18,12 +18,16 @@ class AppUser {
   final UserRoleType? role;
   final List<String>? requestedCourseIds;
   final List<String>? authorizedCourseIds;
+  final DateTime dateAcceptedTermsAndConditions;
+  final String? ipAddressWhenAcceptedTermsAndConditions;
 
   const AppUser({
     required this.id,
     required this.username,
     required this.email,
     required this.genderAgeCategory,
+    required this.dateAcceptedTermsAndConditions,
+    this.ipAddressWhenAcceptedTermsAndConditions,
     this.contactPhone,
     this.contactEmail,
     this.role,
