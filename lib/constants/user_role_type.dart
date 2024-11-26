@@ -1,19 +1,19 @@
-enum UserRoleType
+enum ContributorUserRoleType
 {
   admin,
   reviewer,
   editor,
 }
 
-extension UserRoleTypeExtension on UserRoleType {
-  static UserRoleType? fromString(String value) {
+extension UserRoleTypeExtension on ContributorUserRoleType {
+  static ContributorUserRoleType? fromString(String value) {
     switch (value) {
       case 'admin':
-        return UserRoleType.admin;
+        return ContributorUserRoleType.admin;
       case 'reviewer':
-        return UserRoleType.reviewer;
+        return ContributorUserRoleType.reviewer;
       case 'editor':
-        return UserRoleType.editor;
+        return ContributorUserRoleType.editor;
       default:
         return null;
     }
@@ -21,11 +21,11 @@ extension UserRoleTypeExtension on UserRoleType {
 
   String get stringValue {
     switch (this) {
-      case UserRoleType.admin:
+      case ContributorUserRoleType.admin:
         return 'admin';
-      case UserRoleType.reviewer:
+      case ContributorUserRoleType.reviewer:
         return 'reviewer';
-      case UserRoleType.editor:
+      case ContributorUserRoleType.editor:
         return 'editor';
       default:
         return '';

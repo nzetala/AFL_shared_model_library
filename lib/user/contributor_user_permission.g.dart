@@ -9,7 +9,7 @@ part of 'contributor_user_permission.dart';
 ContributorUserPermission _$ContributorUserPermissionFromJson(
         Map<String, dynamic> json) =>
     ContributorUserPermission(
-      role: $enumDecodeNullable(_$UserRoleTypeEnumMap, json['role']),
+      role: $enumDecodeNullable(_$ContributorUserRoleTypeEnumMap, json['role']),
       requestedCourseIds: (json['requestedCourseIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -24,14 +24,14 @@ ContributorUserPermission _$ContributorUserPermissionFromJson(
 Map<String, dynamic> _$ContributorUserPermissionToJson(
         ContributorUserPermission instance) =>
     <String, dynamic>{
-      'role': _$UserRoleTypeEnumMap[instance.role],
+      'role': _$ContributorUserRoleTypeEnumMap[instance.role],
       'requestedCourseIds': instance.requestedCourseIds,
       'authorizedCourseIds': instance.authorizedCourseIds,
       'permissionEndDate': instance.permissionEndDate?.toIso8601String(),
     };
 
-const _$UserRoleTypeEnumMap = {
-  UserRoleType.admin: 'admin',
-  UserRoleType.reviewer: 'reviewer',
-  UserRoleType.editor: 'editor',
+const _$ContributorUserRoleTypeEnumMap = {
+  ContributorUserRoleType.admin: 'admin',
+  ContributorUserRoleType.reviewer: 'reviewer',
+  ContributorUserRoleType.editor: 'editor',
 };

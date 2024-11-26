@@ -5,7 +5,7 @@ part 'contributor_user_permission.g.dart';
 
 @JsonSerializable()
 class ContributorUserPermission {
-  final UserRoleType? role;
+  final ContributorUserRoleType? role;
   final List<String>? requestedCourseIds;
   final List<String>? authorizedCourseIds;
   final DateTime? permissionEndDate;
