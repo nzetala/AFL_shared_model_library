@@ -3,6 +3,9 @@ enum ContributorUserRoleType
   admin,
   reviewer,
   editor,
+  speaker,
+  viewer,
+  guest
 }
 
 extension UserRoleTypeExtension on ContributorUserRoleType {
@@ -14,8 +17,12 @@ extension UserRoleTypeExtension on ContributorUserRoleType {
         return ContributorUserRoleType.reviewer;
       case 'editor':
         return ContributorUserRoleType.editor;
+      case 'speaker':
+        return ContributorUserRoleType.speaker;
+      case 'viewer':
+        return ContributorUserRoleType.viewer;
       default:
-        return null;
+        return ContributorUserRoleType.guest;
     }
   }
 
@@ -27,8 +34,12 @@ extension UserRoleTypeExtension on ContributorUserRoleType {
         return 'reviewer';
       case ContributorUserRoleType.editor:
         return 'editor';
+      case ContributorUserRoleType.speaker:
+        return 'speaker';
+      case ContributorUserRoleType.viewer:
+        return 'viewer';
       default:
-        return '';
+        return 'guest';
     }
   }
 }

@@ -92,6 +92,12 @@ Result: Text written by the user (User’s language)
 Description: Users listen to an audio clip and write down what they hear in their native language.
 
 
+# Change models
+
+after changing the model, make sure to run the following commands:
+
+`flutter pub run build_runner build --delete-conflicting-outputs`
+
 ## Firebase Naming conventions
 
 ### Collection Names

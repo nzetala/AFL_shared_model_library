@@ -34,4 +34,7 @@ const _$ContributorUserRoleTypeEnumMap = {
   ContributorUserRoleType.admin: 'admin',
   ContributorUserRoleType.reviewer: 'reviewer',
   ContributorUserRoleType.editor: 'editor',
+  ContributorUserRoleType.speaker: 'speaker',
+  ContributorUserRoleType.viewer: 'viewer',
+  ContributorUserRoleType.guest: 'guest',
 };
